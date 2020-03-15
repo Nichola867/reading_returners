@@ -13,4 +13,12 @@
   color: white;
 }
 
+.Search-header {
 
+}
+
+.search-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-33%);
+}
