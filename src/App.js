@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import Search from "./Search";
+import ReadingList from './ReadingList';
+import Headers from './Headers';
 
 class App extends React.Component {
 
@@ -56,18 +58,27 @@ class App extends React.Component {
         }
       }
     ]
-
   }
 
+
   render() {
+    const books = this.state.books
+
     return (
       <div>
         <Search />
+        <Headers />
+        {books.map(n => {
+          return (
+            <ReadingList
+              thumbnail={n.imageLinks.smallThumbnail}
+              title={n.title}
+            />
+          )
+        })}
       </div>
     )
   }
-
-
-
 }
+
 export default App;
