@@ -6,33 +6,51 @@ class Results extends React.Component {
     return (
 
       <div className="container">
-        
-        <div className="row">
+
+        <div className="row" >
           <div className="col-1">
-            <img src={this.props.thumbnail}
-              className="thumbnail-size"
-              alt='thumbnail' />
+            <span>Image</span>
           </div>
-
           <div className="col-3">
-            <p>{this.props.title}</p>
+            <span>Book Title</span>
           </div>
-
           <div className="col-2">
-            <p>{this.props.author}</p>
-          </div>
+            Author
+            </div>
+        </div>
 
-          <div className="col-2">
-            <button
-              type="button"
-              className="btn btn-primary add-button">
-              Add
-            </button>
-          </div>
-        </div >
+        {this.props.results.map(n => {
+          return (
+            <div className="row">
+              <div className="col-1">
+                <img src={n.imageLinks.smallThumbnail}
+                  className="thumbnail-size"
+                  alt='thumbnail' />
+              </div>
+
+              <div className="col-3">
+                <p>{n.title}</p>
+              </div>
+
+              <div className="col-2">
+                <p>{n.authors}</p>
+              </div>
+
+              <div className="col-2">
+                <button
+                  type="button"
+                  className="btn btn-primary add-button">
+                  Add
+                </button>
+              </div>
+            </div>
+          )
+        })}
       </div >
+
     )
   }
 }
+
 
 export default Results

@@ -78,66 +78,19 @@ class App extends React.Component {
   }
 
   render() {
-    const savedBooks = this.state.saved
-    const bookResults = this.state.results
-
+   
     return (
       <div>
         <Search />
-
-        <div className="container">
-          <div className="row" >
-            <div className="col-1">
-              <span>Image</span>
-            </div>
-            <div className="col-3">
-              <span>Book Title</span>
-            </div>
-            <div className="col-2">
-              Author
-            </div>
-          </div>
-
-          {bookResults.map(n => {
-            return (
-              <Results
-                thumbnail={n.imageLinks.smallThumbnail}
-                title={n.title}
-                author={n.authors}
-              />
-            )
-          })}
+        <Results
+          results={this.state.results}
+        />
+        <Headers />
+        <ReadingList
+          bookList={this.state.saved}
+        />       
         </div>
-
-        < Headers />
-
-
-        <div className="container">
-          <div className="row col-headers" >
-            <div className="col-2">
-              <span>Image</span>
-            </div>
-            <div className="col-4">
-              <span>Book Title</span>
-            </div>
-            <div className="col-2">
-              Author
-            </div>
-          </div>
-
-          {savedBooks.map(n => {
-            return (
-              <ReadingList
-                thumbnail={n.imageLinks.smallThumbnail}
-                title={n.title}
-                author={n.authors}
-              />
-            )
-          })}
-        </div>
-      </div>
-
-    )
+     )
   }
 }
 
