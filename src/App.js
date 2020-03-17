@@ -54,7 +54,7 @@ class App extends React.Component {
         title: "Small Great Things",
         authors: "Jodi Picoult",
         imageLinks: {
-          smallThumbnail: ""
+          smallThumbnail: "http://books.google.com/books/content?id=YyKACwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"
         }
       }
     ]
@@ -73,6 +73,7 @@ class App extends React.Component {
             <ReadingList
               thumbnail={n.imageLinks.smallThumbnail}
               title={n.title}
+              author={n.authors}
             />
           )
         })}

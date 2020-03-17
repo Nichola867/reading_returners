@@ -29,7 +29,7 @@ class Search extends React.Component {
             <button
               type="button"
               className="btn btn-primary search-button">
-              Primary
+              Search
             </button>
           </div>
 
