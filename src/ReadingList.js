@@ -4,13 +4,18 @@ class ReadingList extends React.Component {
 
 
   render() {
+
+    const toReadList = this.props.bookList.filter(n => {
+      return n.inList === true
+    })
+
     return (
 
       <div className="container">
 
         <div className="row col-headers" >
           <div className="col-2">
-            <span>Image</span>
+            <span></span>
           </div>
           <div className="col-4">
             <span>Book Title</span>
@@ -20,16 +25,16 @@ class ReadingList extends React.Component {
             </div>
         </div>
 
-        {this.props.bookList.map(n => {
+        {toReadList.map(n => {
           return (
-            <div className="row">
+            <div className="row row-formatting">
               <div className="col-2">
                 <img src={n.imageLinks.smallThumbnail}
                   alt='thumbnail'
                   className="reading-list-thumbnail" />
               </div>
 
-              <div className="col-4">
+              <div className="col-2">
                 <p>{n.title}</p>
               </div>
 
@@ -42,6 +47,14 @@ class ReadingList extends React.Component {
                   type="button"
                   className="btn btn-primary">
                   Mark as read
+                </button>
+              </div>
+
+              <div className="col-2">
+                <button
+                  type="button"
+                  className="btn btn-primary">
+                  Remove from list
                 </button>
               </div>
 

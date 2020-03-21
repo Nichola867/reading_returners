@@ -12,8 +12,9 @@ class Search extends React.Component {
 
               <label
                 form="Search-header">
-                Search by Book Title
+                What do you want to read today?
               </label>
+              
 
               <input
                 type="text"

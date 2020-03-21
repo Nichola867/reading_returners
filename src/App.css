@@ -25,13 +25,13 @@
   transform: translateY(-33%);
 }
 
-.thumbnail-size {
+.results-thumbnail-size {
   width: 26%;
   height: auto;
 }
 
 .reading-list-thumbnail {
-  width: 50%;
+  width: 45%;
   height: auto;
 }
 
@@ -46,4 +46,9 @@
   font-weight: bold;
   padding-top: 20px;
   display: block;
+}
+
+.row-formatting {
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
