@@ -74,24 +74,41 @@ class App extends React.Component {
 
 
   addBookToList = (ID) => {
-    const updatedResultsList = this.state.books.map(n => {
+    const updatedResultsListAdd = this.state.books.map(n => {
       if (n.id === ID) {
         return {
-          ...n,         
-          inList: true,         
+          ...n,
+          inList: true,
         }
       }
       return n
     })
 
     this.setState({
-      books: updatedResultsList
+      books: updatedResultsListAdd
     })
   }
 
-  render() {    
+  removeFromBookList = (ID) => {
+    const updatedResultsListRemove = this.state.books.map(n => {
+      if (n.id === ID) {
+        return {
+          ...n,
+          inList: false
+        }
+      }
+      return n
+    })
+
+    this.setState({
+      books:updatedResultsListRemove
+    })
+  }
+  
+
+  render() {
     return (
-      
+
       <div>
         <Search />
         <Results
@@ -102,6 +119,7 @@ class App extends React.Component {
         <Headers />
         <ReadingList
           bookList={this.state.books}
+          handleDeleteFunc={this.removeFromBookList}
         />
       </div>
     )

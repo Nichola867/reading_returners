@@ -2,6 +2,10 @@ import React from 'react';
 
 class ReadingList extends React.Component {
 
+  handleDelete = (id) => {
+    this.props.handleDeleteFunc(id)
+  }
+
 
   render() {
 
@@ -17,7 +21,7 @@ class ReadingList extends React.Component {
           <div className="col-2">
             <span></span>
           </div>
-          <div className="col-4">
+          <div className="col-3">
             <span>Book Title</span>
           </div>
           <div className="col-2">
@@ -34,7 +38,7 @@ class ReadingList extends React.Component {
                   className="reading-list-thumbnail" />
               </div>
 
-              <div className="col-2">
+              <div className="col-3">
                 <p>{n.title}</p>
               </div>
 
@@ -53,22 +57,18 @@ class ReadingList extends React.Component {
               <div className="col-2">
                 <button
                   type="button"
-                  className="btn btn-primary">
+                  className="btn btn-primary"
+                  onClick={() => this.handleDelete(n.id)}
+                >
                   Remove from list
                 </button>
               </div>
 
-              <div className="col-2">
-                <button
-                  type="button"
-                  className="btn btn-primary">
-                  Delete
-              </button>
-              </div>
             </div>
           )
-        })}
-      </div>
+        })
+        }
+      </div >
     )
   }
 }
