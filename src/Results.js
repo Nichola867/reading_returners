@@ -33,7 +33,7 @@ class Results extends React.Component {
             <div className="row">
               <div className="col-1">
                 <img
-                  src={n.imageLinks.smallThumbnail}
+                  src={n.thumbnail}
                   className="results-thumbnail-size"
                   alt='thumbnail' />
               </div>
